@@ -30,8 +30,8 @@ export default defineConfig({
         /* Base URL to use in actions like `await page.goto('/')`. */
         baseURL: 'https://oikocredit--ltp.sandbox.my.salesforce.com',
 
-        // actionTimeout: 60 * 1000,
-        // navigationTimeout: 60 * 1000,
+        actionTimeout: 30 * 1000,
+        navigationTimeout: 60 * 1000,
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',

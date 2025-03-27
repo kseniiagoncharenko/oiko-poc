@@ -26,15 +26,11 @@ export class ConvertLeadPage extends PageBase {
     }
 
     async isConvertLeadWindowVisible() {
-        await this.convertLeadWindowHeader.waitFor({
-            timeout: 5000,
-        });
+        await this.convertLeadWindowHeader.waitFor();
     }
 
     async isConfirmationMessageVisible() {
-        await this.confirmationMessage.waitFor({
-            timeout: 5000,
-        });
+        await this.confirmationMessage.waitFor();
     }
 
     async clickConvert() {

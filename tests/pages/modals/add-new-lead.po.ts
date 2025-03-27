@@ -72,13 +72,13 @@ export class AddNewLeadPage extends PageBase {
 
     async setBranchAccount(branch: string) {
         await this.branchAccountInput.click();
-        await this.branchAccountDropdown(branch).waitFor({ timeout: 5000 });
+        await this.branchAccountDropdown(branch).waitFor();
         await this.branchAccountDropdown(branch).click();
     }
 
     async setSAAccount(sa: string) {
         await this.saAccountInput.click();
-        await this.saAccountDropdown(sa).waitFor({ timeout: 5000 });
+        await this.saAccountDropdown(sa).waitFor();
         await this.saAccountDropdown(sa).click();
     }
 

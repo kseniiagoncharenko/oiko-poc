@@ -25,17 +25,17 @@ export class GlobalHeaderPage extends PageBase {
     }
 
     async clickSearchButton() {
-        await this.searchButton.waitFor({ timeout: 5000 });
+        await this.searchButton.waitFor();
         await this.searchButton.click();
     }
 
     async openFilter() {
-        await this.filterDropdown.waitFor({ timeout: 5000 });
+        await this.filterDropdown.waitFor();
         await this.filterDropdown.click();
     }
 
     async clickSearchResultItem(item: string) {
-        await this.selectOption(item).waitFor({ timeout: 5000 });
+        await this.selectOption(item).waitFor();
         await this.selectOption(item).click();
     }
 
@@ -44,7 +44,7 @@ export class GlobalHeaderPage extends PageBase {
         const userEntry = this.searchResultItem.filter({
             hasText: `${userName}User`,
         });
-        await userEntry.waitFor({ timeout: 5000 });
+        await userEntry.waitFor();
         await userEntry.click();
     }
 }
