@@ -1,7 +1,7 @@
 import { IAccount } from './models';
 
 export class Accounts {
-    private static createAccount(
+    public static createAccount(
         firstName: string,
         lastName: string,
         email: string,
@@ -19,18 +19,6 @@ export class Accounts {
             accountName,
             leadSource,
         };
-    }
-
-    public static createGermanAccountWithEventSource(): IAccount {
-        return this.createAccount(
-            'e2euser',
-            'test',
-            'e2euser@test.com',
-            'Oikocredit Deutschland, Büro Berlin',
-            'Oikocredit Ostdeutscher Förderkreis e. V.',
-            'E2E Company' + new Date().getTime(),
-            LeadSources.event
-        );
     }
 }
 
