@@ -8,7 +8,10 @@ import { Accounts } from '../constants';
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
     const loginhelper = new LoginHelper(page);
-    await loginhelper.login('', '');
+    await loginhelper.login(
+        process.env.SALESFORCE_USERNAME!,
+        process.env.SALESFORCE_PASSWORD!
+    );
 
     await loginhelper.loginAs('Testing Inflow');
 });
