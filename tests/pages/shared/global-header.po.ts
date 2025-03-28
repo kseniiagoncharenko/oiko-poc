@@ -2,6 +2,7 @@ import { type Locator, type Page } from '@playwright/test';
 import { PageBase } from '../page-base.po';
 
 export class GlobalHeaderPage extends PageBase {
+    private dialogContainer: Locator;
     private filterDropdown: Locator;
     private selectOption: (item: string) => Locator;
     private searchButton: Locator;
@@ -11,6 +12,7 @@ export class GlobalHeaderPage extends PageBase {
 
     constructor(readonly page: Page) {
         super(page);
+        this.dialogContainer = page.locator('.saDialogPaneContainer');
         this.filterDropdown = page.locator('[data-value="Search: All"]');
         this.selectOption = (item: string): Locator =>
             page.locator('ul[aria-label="Suggested For You"] > li', {
@@ -30,6 +32,7 @@ export class GlobalHeaderPage extends PageBase {
     }
 
     async openFilter() {
+        await this.dialogContainer.waitFor();
         await this.filterDropdown.waitFor();
         await this.filterDropdown.click();
     }

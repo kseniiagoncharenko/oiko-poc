@@ -30,6 +30,8 @@ const accounts = [
         accountName: 'E2E Company' + new Date().getTime(),
         leadSource: LeadSources.event,
     },
+
+    //this test will fail because of the selected lead source
     {
         firstName: 'e2euser',
         lastName: 'test',
@@ -37,7 +39,7 @@ const accounts = [
         branchAccount: 'Oikocredit Deutschland, Büro Bonn',
         saAccount: 'Oikocredit Westdeutscher Förderkreis',
         accountName: 'E2E Company' + new Date().getTime(),
-        leadSource: LeadSources.event,
+        leadSource: LeadSources.media,
     },
 ];
 accounts.forEach((account) => {

@@ -6,6 +6,7 @@ export class ConvertLeadPage extends PageBase {
     private convertedItemLink: (accountName: string) => Locator;
     private convertLeadWindowHeader: Locator;
     private convertButton: Locator;
+    private recordTypeCombobox: Locator;
 
     constructor(readonly page: Page) {
         super(page);
@@ -23,6 +24,7 @@ export class ConvertLeadPage extends PageBase {
                 hasText: 'Convert',
             }
         );
+        this.recordTypeCombobox = page.locator('.recordType .picklist');
     }
 
     async isConvertLeadWindowVisible() {
@@ -39,5 +41,9 @@ export class ConvertLeadPage extends PageBase {
 
     async clickConvertedItemLink(accountName: string) {
         await this.convertedItemLink(accountName).click();
+    }
+
+    async clickRecordType() {
+        await this.recordTypeCombobox.click();
     }
 }

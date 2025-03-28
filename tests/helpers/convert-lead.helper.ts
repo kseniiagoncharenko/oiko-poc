@@ -20,6 +20,7 @@ export class ConvertLeadHelper extends HelperBase {
         await this.leadsTabPage.clickConvertLead();
 
         await this.convertLeadPage.isConvertLeadWindowVisible();
+        await this.convertLeadPage.clickRecordType();
         await this.convertLeadPage.clickConvert();
 
         await this.page.waitForLoadState();
